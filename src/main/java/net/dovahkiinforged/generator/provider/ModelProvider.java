@@ -24,6 +24,8 @@ public class ModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemGenerator) {
         // generate all item models.
         Items.ALL_ITEMS.forEach(item -> itemGenerator.register(item, Models.GENERATED));
+        Items.ALL_ALCHEMY_INGREDIENTS.forEach(item -> itemGenerator.register(item, Models.GENERATED));
+        Items.ALL_FOOD_AND_BEVERAGE.forEach(item -> itemGenerator.register(item, Models.GENERATED));
     }
 
 }

@@ -6,9 +6,7 @@ ext {
             fabric       : "0.106.1+1.21.3",
             fabric_loader: "0.16.8",
             // mod commons dep
-            commons      : "1.0.4-SNAPSHOT",
-            // utility deps
-            lombok       : "1.18.36",
+            commons      : "1.0.5-SNAPSHOT",
     ]
 
     libs = [
@@ -21,7 +19,5 @@ ext {
             yarn     : "net.fabricmc:yarn:${versions.yarn}:v2",
             // mod commons dep
             commons  : "net.dovahkiinforged:dovahkiin-forged-commons:${versions.commons}",
-            // utility deps
-            lombok   : "org.projectlombok:lombok:${versions.lombok}",
     ]
 }

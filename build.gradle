@@ -1,12 +1,12 @@
 plugins {
-    id 'fabric-loom' version '1.8-SNAPSHOT'
+    id 'fabric-loom' version '1.10-SNAPSHOT'
     id 'maven-publish'
+    id 'io.freefair.lombok' version '8.12.2'
 }
 
 apply from: "$projectDir/gradle/dependencies.gradle"
 
 version = project.mod_version
-group = 'net.dovahkiinforged'
 
 base {
     archivesName = project.archives_base_name
@@ -15,9 +15,9 @@ base {
 repositories {
     mavenLocal()
     maven {
-        url = uri("https://maven.pkg.github.com/DylanBulmer/dovahkiin-forged-commons")
+        url = uri("https://maven.pkg.github.com/DovahkiinForged/dovahkiin-forged-commons")
         credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+            username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
             password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
         }
     }
@@ -45,6 +45,7 @@ dependencies {
     mappings libs.yarn
     modImplementation libs.fabric
 
+    // commons library
     implementation libs.commons
 }
 
